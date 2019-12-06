@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>    
+    <groupId>co.h2a.sandbox.osgi</groupId>
+    <artifactId>osgi-lab-hello</artifactId>
+    <name>H2A :: Sandbox :: OSGi :: Lab-Hello</name>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    
+    <developers>
+        <developer>
+            <name>H2A</name>
+            <email>contato@h2asol.com</email>
+            <url>https://www.h2asol.com.br</url>
+            <organization>H2A Desenvolvimento de Software Ltda</organization>
+            <organizationUrl>http://www.h2asol.com.br/</organizationUrl>
+            <properties>
+                <picUrl>https://www.h2asol.com.br/images/logo-white.png</picUrl>
+            </properties>
+        </developer>
+    </developers>
+    
+    <modules>
+        <module>osgi-lab-hello-api</module>
+        <module>osgi-lab-hello-service</module>
+        <module>osgi-lab-hello-feature</module>
+    </modules>
+    
+    <properties>
+        
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        
+        <felix.plugin.version>4.2.1</felix.plugin.version>
+        <osgi.compendium.version>6.0.0</osgi.compendium.version>
+        <servicemix-spec.version>2.9.0</servicemix-spec.version>
+        <cxf.version>3.3.4</cxf.version>
+        
+    </properties>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${felix.plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>osgi.cmpn</artifactId>
+                <version>${osgi.compendium.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
