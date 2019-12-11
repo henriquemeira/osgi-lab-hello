@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>osgi-lab-hello-client</artifactId>
+    <name>H2A :: Sandbox :: OSGi :: Lab-Hello :: Client</name>
+    <packaging>bundle</packaging>
+
+    <parent>
+        <groupId>co.h2a.sandbox.osgi</groupId>
+        <artifactId>osgi-lab-hello</artifactId>
+        <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>co.h2a.sandbox.osgi</groupId>
+            <artifactId>osgi-lab-hello-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.shell</groupId>
+            <artifactId>org.apache.karaf.shell.core</artifactId>
+            <version>${core.karaf.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${felix.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Private-Package>co.h2a.sandbox.osgi.lab.hello.client</Private-Package>
+                        <Import-Package>
+                            org.apache.karaf.shell.api.action*,
+                            co.h2a.sandbox.osgi.lab.hello.api
+                        </Import-Package>
+                        <Karaf-Commands>co.h2a.sandbox.osgi.lab.hello.client</Karaf-Commands>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
