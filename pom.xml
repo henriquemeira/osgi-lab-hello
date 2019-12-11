@@ -23,6 +23,7 @@
     
     <modules>
         <module>osgi-lab-hello-api</module>
+        <module>osgi-lab-hello-client</module>
         <module>osgi-lab-hello-service</module>
         <module>osgi-lab-hello-feature</module>
     </modules>
@@ -37,6 +38,7 @@
         <osgi.compendium.version>6.0.0</osgi.compendium.version>
         <servicemix-spec.version>2.9.0</servicemix-spec.version>
         <cxf.version>3.3.4</cxf.version>
+        <core.karaf.version>4.2.1</core.karaf.version>
         
     </properties>
     

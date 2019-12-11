@@ -1,4 +1,3 @@
-
 package co.h2a.sandbox.osgi.lab.hello.service;
 
 import org.osgi.service.component.annotations.Component;
@@ -18,7 +17,7 @@ import co.h2a.sandbox.osgi.lab.hello.api.HelloPerson;
 import co.h2a.sandbox.osgi.lab.hello.api.Person;
 
 @Path("/helloperson")
-@Component(service = HelloPersonService.class, property = { "osgi.jaxrs.resource=true" })
+@Component(service = HelloPerson.class, property = { "osgi.jaxrs.resource=true" })
 public class HelloPersonService implements HelloPerson {
     
     private final Map<Long, Person> persons = new HashMap<>();

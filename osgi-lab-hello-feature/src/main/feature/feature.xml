@@ -5,11 +5,16 @@
     <repository>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features</repository>
     <repository>mvn:org.apache.aries.jax.rs/org.apache.aries.jax.rs.features/1.0.3/xml</repository>
     
-    <feature name="osgi-lab-hello-common" version="${project.version}">
+    <feature name="osgi-lab-hello-common" description="Provide OSGI Lab Hello API" version="${project.version}">
         <bundle>mvn:co.h2a.sandbox.osgi/osgi-lab-hello-api/${project.version}</bundle>
     </feature>
+    
+    <feature name="osgi-lab-hello-client" description="Provide OSGI Lab Hello Client" version="${project.version}">
+        <feature version="${project.version}">osgi-lab-hello-common</feature>
+        <bundle>mvn:co.h2a.sandbox.osgi/osgi-lab-hello-client/${project.version}</bundle>
+    </feature>
 
-    <feature name="osgi-lab-hello-service" version="${project.version}">
+    <feature name="osgi-lab-hello-service" description="Provide OSGI Lab Hello Services" version="${project.version}">
         <feature version="${project.version}">osgi-lab-hello-common</feature>
         <feature>http-whiteboard</feature>
         <feature>aries-jax-rs-whiteboard</feature>

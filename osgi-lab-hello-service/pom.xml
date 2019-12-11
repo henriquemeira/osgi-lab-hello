@@ -40,12 +40,9 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Import-Package>
-                            *
-                        </Import-Package>
-                        <Private-Package>
+                        <Export-Package>
                             co.h2a.sandbox.osgi.lab.hello.service
-                        </Private-Package>
+                        </Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
